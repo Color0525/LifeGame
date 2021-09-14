@@ -17,13 +17,6 @@ public class Cell : MonoBehaviour
     }
     public bool NextAlive { get; set; }
 
-    bool m_downMouse = false;
-
-    private void Update()
-    {
-        m_downMouse = Input.GetButton("Fire1") ? true : false;
-    }
-    
     public void NextStep()
     {
         Alive = NextAlive;
@@ -31,6 +24,6 @@ public class Cell : MonoBehaviour
 
     public void MouseAlive()
     {
-        if (m_downMouse) Alive = true;
+        if (Input.GetButton("Fire1")) Alive = true;
     }
 }
